@@ -22,5 +22,9 @@ module Servicanpc
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    
+    # Add the fonts and videos path
+    config.assets.paths << "#{Rails.root}/app/assets/fonts"
+    config.assets.paths << "#{Rails.root}/app/assets/videos"
   end
 end

@@ -1,0 +1,131 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'variables';
+
+* {
+  padding:0;
+  margin:0;
+  border:0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  list-style:none;
+  outline:none;
+}
+
+img {
+  max-width:100%;
+}
+
+body {
+  width:100%;
+  font-family: $primary-font;
+  color: $primary-color;
+  overflow-x:hidden;
+  background: #ddd;
+}
+
+.anchor {
+  display: block; 
+  position: relative; 
+  top: -98px;
+}
+
+#video_container {
+	height:800px;
+	overflow:hidden;
+	position: fixed;
+  	width: 100%;
+  	z-index:-1;
+}
+
+/*************************************** HEADER **************************************/
+
+#header {
+  padding: 28px 5.12% 0;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 1;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+#header .wrapper {
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  overflow:hidden;
+}
+
+#logo {
+  background-image: url(asset-path('logo.png'));
+  width:200px;
+  height:32px;
+  background-size:contain;
+  background-repeat:no-repeat;
+  float:left;
+}
+
+#logo_text {
+  position: absolute;
+  top: 38px;
+  left: 120px;
+  font-size: 22px;
+}
+
+.solid {
+  background: #fff;
+  border-bottom:1px solid rgba(0, 0, 0, 0.05);
+}
+
+.solid #logo_text {
+  color:#333;
+}
+
+.solid .wrapper {
+  border-bottom:0 !important;
+}
+
+/***************************************** MAIN MENU ****************************************/
+
+
+#main_menu {
+  float:right;
+  width:600px;
+}
+
+#main_menu li {
+  display: inline-block;
+  padding: 2.12% 4.5%;
+  float:left;
+}
+
+#main_menu li a {
+  font-family: $secondary-font;
+  text-transform:uppercase;
+  letter-spacing: 0.2em;
+  font-size:0.8em;
+}
+
+.solid #main_menu li a {
+  color:#444;
+}
+
+
+
+
+/***************************************** STYLES ****************************************/
+
+.highlight {
+  color:$secondary-color;
+}
+
+strong {
+font-weight:bold;
+}
+
+a { 
+	text-decoration:none;
+	color:inherit;
+}

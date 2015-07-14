@@ -10,6 +10,7 @@ $(document).ready(function(){
 
 			$("#header").addClass("solid");
 			$("#slogan h2").fadeOut(200);
+			
 
 		} 
 		
@@ -21,16 +22,45 @@ $(document).ready(function(){
 		}
 
    });
+
+
+/******************************************** SMOOTH SCROLLING *****************************************/  
    
    
-   $('a[href^="#"]').on('click', function(event) {
+   $('a[href*="#"]').on('click', function(event) {
     
-    alert("ya");
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 400);
+        return false;
+      }
+    }
 });
    
 /******************************************** PANEL RESIZE *****************************************/   
    
    //divResize();	
+
+
+/******************************************** LOC NAVIGATION *****************************************/  
+   
+    $( "#label_naco" ).click(function() {
+      $("#map_container").css("marginLeft", 0);
+      $("#arroyohondo .box").hide();
+      $("#naco .box").show();
+   });
+   
+   $( "#label_arroyo_hondo" ).click(function() {
+      $("#map_container").css("marginLeft", -1139);
+      $("#naco .box").hide();
+      $("#arroyohondo .box").show();
+   });
+   
+/******************************************** END DOC READY *****************************************/  
    
 }); // END DOCUMENT READY
 
@@ -44,7 +74,7 @@ $(document).ready(function(){
 
 /****************************************** RESIZE FUNCTION *******************************************/
 
-
+/*
 
 	function divResize() {
 	  $('#slogan').css('min-height', $(window).height());
@@ -57,3 +87,4 @@ $(document).ready(function(){
 	});
                 
 
+*/

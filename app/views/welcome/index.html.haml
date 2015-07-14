@@ -42,6 +42,8 @@
     .left
       %h3 Qué dicen nuestros clientes...
       %p Compártenos tu opinión a través de nuestras redes sociales. 
+      = link_to image_tag("fb.png"), 'https://www.facebook.com/servicanpetcenter', :class => 'social', :target => '_blank'
+      = link_to image_tag("instagram.png"), 'https://instagram.com/servicanpc/', :class => 'social', :target => '_blank'
     
     .right
       #comment_box Desde 1987 cuando me entrenaron a mi primera perra Doberman Queeny, magnífico servicio y confiable.
@@ -50,8 +52,8 @@
         #author_name Ramdy Guerrero
         #rating 
  
-.anchor#servicios  
-#services.panel
+.anchor#contacto  
+#contact.panel
   .wrapper
     %p ¿Preguntas? ¿Comentarios? Escríbenos haciendo <a href="mailto:contacto@servican.com.do">clic aquí.</a>
     

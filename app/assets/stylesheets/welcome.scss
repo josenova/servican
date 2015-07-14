@@ -121,6 +121,13 @@
 
 /***************************************** CUSTOMERS ****************************************/
 
+.social img {
+ width:25px;
+ position:relative;
+ top:10px;
+ margin: 0 2px 0 0;
+}
+
 #customers {
   background-color: #f0f0f0;
 }
@@ -187,7 +194,7 @@
 
 /***************************************** SERVICES ****************************************/
 
-#services {
+#contact {
   background-color: #2c3e50;
   background-image: url(asset-path('paper_plane.png'));
   background-repeat: no-repeat;
@@ -197,13 +204,13 @@
 }
 
 
-#services p {
+#contact p {
   
   font-size:19px;
   font-family: $primary-font;
   }
   
-#services p a {
+#contact p a {
 font-weight: bold;
   font-family: "Merriweather", Times New Roman, serif;
   font-size: 19px;
@@ -345,10 +352,6 @@ display:none;
 
 /***************************************** COPYRIGHT ****************************************/
 
-#contact {
-  height: 600px;
-  background: #333;
-}
 
 
 #copyright {

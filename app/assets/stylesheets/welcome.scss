@@ -93,6 +93,8 @@
 }
 
 
+
+
 #catalog h6 {
   font-size: 16px;
   padding: 1.3% 0;
@@ -112,13 +114,40 @@
 .thumbnail {
   float: left;
   overflow: hidden;
-  width: 70px;
-  height: 70px;
+  width: 64px;
+  height: 64px;
   border: 1px solid #3498DB;
-  border-radius: 35px;
+  border-radius: 32px;
   margin: 0 14px 0 0;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
+
+#catalog li:nth-child(1) .thumbnail {
+  background-image: url(asset-path('cross2.png'));  
+    background-size: 48%;  
+}
+
+#catalog li:nth-child(2) .thumbnail {
+  background-image: url(asset-path('lab.png'));  
+    background-size: 58%;  
+}
+
+#catalog li:nth-child(3) .thumbnail {
+  background-image: url(asset-path('zzz.png'));  
+    background-size: 58%;  
+}
+
+#catalog li:nth-child(4) .thumbnail {
+  background-image: url(asset-path('training.png'));  
+    background-size: 58%;  
+}
+
+#catalog li:nth-child(5) .thumbnail {
+  background-image: url(asset-path('van.png'));  
+    background-size: 58%;  
+}
 /***************************************** CUSTOMERS ****************************************/
 
 .social img {

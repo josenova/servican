@@ -9,7 +9,9 @@ $(document).ready(function(){
 		if ($(this).scrollTop() > 100) {
 
 			$("#header").addClass("solid");
+			$("#logo").addClass("colour");
 			$("#slogan h2").fadeOut(200);
+			
 			
 
 		} 
@@ -17,6 +19,7 @@ $(document).ready(function(){
 		else {
 
 			$("#header").removeClass("solid");
+			$("#logo").removeClass("colour");
 			$("#slogan h2").fadeIn(200);
 
 		}

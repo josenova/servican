@@ -97,12 +97,20 @@ body {
 
 
 #logo {
-  background-image: url(asset-path('logo.png'));
-  width:200px;
-  height:32px;
+  background-image: url(asset-path('logo_white.png'));
   background-size:contain;
   background-repeat:no-repeat;
-  float:left;
+      width: 32px;
+    height: 36px;
+    float: left;
+    left: 21px;
+    top: 1px;
+    position: relative;
+}
+
+#logo.colour {
+
+background-image: url(asset-path('logo.png')) !important;
 }
 
 #logo_text {

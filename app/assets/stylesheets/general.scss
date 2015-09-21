@@ -38,7 +38,9 @@ body {
 	position: fixed;
   	width: 100%;
   	z-index:-2;
-  	background-color:#555;
+  	 background-image: url(asset-path('videobg.png'));
+  background-size:contain;
+  background-repeat:no-repeat;
 }
 
 #video_overlap {

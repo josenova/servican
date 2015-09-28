@@ -11,19 +11,13 @@ $(document).ready(function(){
 			$("#header").addClass("solid");
 			$("#logo").addClass("colour");
 			$("#slogan h2").fadeOut(200);
-			
-			
-
 		} 
 		
 		else {
-
 			$("#header").removeClass("solid");
 			$("#logo").removeClass("colour");
 			$("#slogan h2").fadeIn(200);
-
 		}
-
    });
 
 
@@ -46,7 +40,7 @@ $(document).ready(function(){
    
 /******************************************** PANEL RESIZE *****************************************/   
    
-   //divResize();	
+   divResize();	
 
 
 /******************************************** LOC NAVIGATION *****************************************/  
@@ -65,6 +59,7 @@ $(document).ready(function(){
    
 /******************************************** END DOC READY *****************************************/  
    
+
 }); // END DOCUMENT READY
 
 
@@ -77,10 +72,12 @@ $(document).ready(function(){
 
 /****************************************** RESIZE FUNCTION *******************************************/
 
-/*
+
 
 	function divResize() {
-	  $('#slogan').css('min-height', $(window).height());
+	  $('#video_container video').css({'height': window.innerWidth/1.77916667, 'width': window.innerWidth});
+    $('#slogan').css('height', window.innerWidth/1.82);
+    $('#slogan h2').css('font-size', window.innerWidth/21 + 'px');
 	}
 	
 	$(window).bind('resize', function () { 
@@ -90,4 +87,3 @@ $(document).ready(function(){
 	});
                 
 
-*/

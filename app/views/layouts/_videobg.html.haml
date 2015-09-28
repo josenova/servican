@@ -1,4 +1,4 @@
 #video_container
   - unless is_mobile
-    = video_tag ["spclow.mp4",""], :controls => false, :preload => "auto",  :loop => "loop", :poster => asset_path('videobg.png')
+    = video_tag ["spclow.mp4",""], :controls => false, :autoplay => "autoplay", :loop => "loop", :poster => asset_path('videobg.png')
 #video_overlap

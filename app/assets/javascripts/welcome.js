@@ -76,7 +76,7 @@ $(document).ready(function(){
 
 	function divResize() {
 	  $('#video_container video').css({'height': window.innerWidth/1.77916667, 'width': window.innerWidth});
-    $('#slogan').css('height', window.innerWidth/1.82);
+    $('#slogan').css('height', window.innerWidth/1.825);
     $('#slogan h2').css('font-size', window.innerWidth/21 + 'px');
 	}
 	

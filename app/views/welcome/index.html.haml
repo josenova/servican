@@ -1,92 +1,93 @@
-#slogan.panel
-  %h2 Amor del <strong>bueno</strong><br> viene en <strong>cuatro<br> patas</strong>.
-  #emergency 
-    #cross 
-      = image_tag("cross.png");
-    %span Emergencias: <strong>809.669.2786</strong>
-	
-.anchor#nosotros 
-#about_us.panel
-  .wrapper
-    #title Somos una Clínica Veterinaria con más de 32 años de experiencia 
-    #description  Nos dedicamos a ofrecer el <span class="highlight">cuidado</span> y la <span class="highlight">atención</span> de más alta calidad, impulsados por nuestro amor por los animales y por <span class="highlight">tu mascota</span>. 
-    %ul#catalog
-      %li 
-        .thumbnail
-        %h6 Atención Médica
-        %p Y los medicamentos necesarios para el tratamiento indicado de tu mascota.
-      %li 
-        .thumbnail
-        %h6 Laboratorio
-        %p Con la tecnología más avanzada para un diagnóstico rápido y preciso.
-      %li 
-        .thumbnail
-        %h6 Hotel
-        %p Opción de hospedaje fuera de la ciudad en áreas de amplio metraje.
-      %li 
-        .thumbnail
-        %h6 Adestramiento
-        %p Modificación de conductas tanto en perro como en gatos.
-      %li 
-        .thumbnail
-        %h6 Transporte
-        %p Dentro y fuera de la ciudad con aire acondicionado.
-      %li 
-        .thumbnail
-        %h6 Centro de Estética
-        %p Baños, cortes de pelo y corte de uñas para tu mascota.
+- unless is_mobile
+  #slogan.panel
+    %h2 Amor del <strong>bueno</strong><br> viene en <strong>cuatro<br> patas</strong>.
+    #emergency 
+      #cross 
+        = image_tag("cross.png");
+      %span Emergencias: <strong>809.669.2786</strong>
+
+  .anchor#nosotros 
+  #about_us.panel
+    .wrapper
+      #title Somos una Clínica Veterinaria con más de 32 años de experiencia 
+      #description  Nos dedicamos a ofrecer el <span class="highlight">cuidado</span> y la <span class="highlight">atención</span> de más alta calidad, impulsados por nuestro amor por los animales y por <span class="highlight">tu mascota</span>. 
+      %ul#catalog
+        %li 
+          .thumbnail
+          %h6 Atención Médica
+          %p Y los medicamentos necesarios para el tratamiento indicado de tu mascota.
+        %li 
+          .thumbnail
+          %h6 Laboratorio
+          %p Con la tecnología más avanzada para un diagnóstico rápido y preciso.
+        %li 
+          .thumbnail
+          %h6 Hotel
+          %p Opción de hospedaje fuera de la ciudad en áreas de amplio metraje.
+        %li 
+          .thumbnail
+          %h6 Adestramiento
+          %p Modificación de conductas tanto en perro como en gatos.
+        %li 
+          .thumbnail
+          %h6 Transporte
+          %p Dentro y fuera de la ciudad con aire acondicionado.
+        %li 
+          .thumbnail
+          %h6 Centro de Estética
+          %p Baños, cortes de pelo y corte de uñas para tu mascota.
 
         
-#customers.panel
-  .wrapper
-    .left
-      %h3 Qué dicen nuestros clientes...
-      %p Compártenos tu opinión a través de nuestras redes sociales. 
-      = link_to image_tag("fb.png"), 'https://www.facebook.com/servicanpetcenter', :class => 'social', :target => '_blank'
-      = link_to image_tag("instagram.png"), 'https://instagram.com/servicanpc/', :class => 'social', :target => '_blank'
+  #customers.panel
+    .wrapper
+      .left
+        %h3 Qué dicen nuestros clientes...
+        %p Compártenos tu opinión a través de nuestras redes sociales. 
+        = link_to image_tag("fb.png"), 'https://www.facebook.com/servicanpetcenter', :class => 'social', :target => '_blank'
+        = link_to image_tag("instagram.png"), 'https://instagram.com/servicanpc/', :class => 'social', :target => '_blank'
     
-    .right
-      #comment_box Desde 1987 cuando me entrenaron a mi primera perra Doberman Queeny, magnífico servicio y confiable.
-      #comment_author
-        #author_pic
-        #author_name Ramdy Guerrero
-        #rating 
+      .right
+        #comment_box Desde 1987 cuando me entrenaron a mi primera perra Doberman Queeny, magnífico servicio y confiable.
+        #comment_author
+          #author_pic
+          #author_name Ramdy Guerrero
+          #rating 
  
-.anchor#contacto  
-#contact.panel
-  .wrapper
-    %p ¿Preguntas? ¿Comentarios? Escríbenos haciendo <a href="mailto:contacto@servican.com.do">clic aquí.</a>
+  .anchor#contacto  
+  #contact.panel
+    .wrapper
+      %p ¿Preguntas? ¿Comentarios? Escríbenos haciendo <a href="mailto:contacto@servican.com.do">clic aquí.</a>
     
     
-.anchor#sucursales
-#locations.panel
-  %ul#navigation
-    %li
-      %input{ :type => "radio", :name => "radio", :id => "radio1", :class => "radio", :checked => "checked"}
-      %label{ :for => "radio1", :id => "label_naco"} Naco
-    %li
-      %input{ :type => "radio", :name => "radio", :id => "radio2", :class => "radio"}
-      %label{ :for => "radio2", :id => "label_arroyo_hondo"} Arroyo Hondo
-    %li
-      %input{ :type => "radio", :name => "radio", :id => "radio3", :class => "radio"}
-      %label{ :for => "radio3", :id => "label_finca"} Hotel Finca
+  .anchor#sucursales
+  #locations.panel
+    %ul#navigation
+      %li
+        %input{ :type => "radio", :name => "radio", :id => "radio1", :class => "radio", :checked => "checked"}
+        %label{ :for => "radio1", :id => "label_naco"} Naco
+      %li
+        %input{ :type => "radio", :name => "radio", :id => "radio2", :class => "radio"}
+        %label{ :for => "radio2", :id => "label_arroyo_hondo"} Arroyo Hondo
+      %li
+        %input{ :type => "radio", :name => "radio", :id => "radio3", :class => "radio"}
+        %label{ :for => "radio3", :id => "label_finca"} Hotel Finca
 
-  #map_container
-    #naco.map
-      %a{:href => "https://goo.gl/maps/sJehH", :target => "_blank"}
-      .box 
-        .sector Sucursal Naco 
-        .address Rafael Hernandez #16-B <br>Santo Domingo, R.D. 
-        .phone 809.566.2897 
+    #map_container
+      #naco.map
+        %a{:href => "https://goo.gl/maps/sJehH", :target => "_blank"}
+        .box 
+          .sector Sucursal Naco 
+          .address Rafael Hernandez #16-B <br>Santo Domingo, R.D. 
+          .phone 809.566.2897 
     
-    #arroyohondo.map
-      %a{:href => "https://goo.gl/maps/GiSJB", :target => "_blank"}
-      .box
-        .sector Sucursal Arroyo Hondo
-        .address Av. Los Arroyos #1, Plaza Botanika, Local 9B. Santo Domingo, R.D.
-        .phone 809.385.0045 / 809.385.0059   
+      #arroyohondo.map
+        %a{:href => "https://goo.gl/maps/GiSJB", :target => "_blank"}
+        .box
+          .sector Sucursal Arroyo Hondo
+          .address Av. Los Arroyos #1, Plaza Botanika, Local 9B. Santo Domingo, R.D.
+          .phone 809.385.0045 / 809.385.0059   
 
 
-#copyright.panel
-  %span © Copyright 2015 SERVIVET S.A. Todos los Derechos Reservados.
+  #copyright.panel
+    %span © Copyright 2015 SERVIVET S.A. Todos los Derechos Reservados.
   

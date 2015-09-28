@@ -1,0 +1,36 @@
+@media screen and (max-width: 1098px) {
+
+	#main_menu {
+	 display:none;	
+	}
+
+}
+
+
+@media screen and (max-width: 1098px) {
+
+	#header {
+		    background: #fff !important;
+	}
+
+	#logo {
+		    background-image: url(asset-path('logo.png')) !important;
+	}
+
+	#logo_text {
+    color: #333 !important;
+	}
+
+	#about_us, #description, #catalog, #customers, #contact, #video_container, #locations, #video_overlap, #slogan h2  {
+		display:none;
+	}
+
+	body {
+		background-color:#fff !important;
+	}
+
+	#slogan #emergency {
+		width:100%;
+	}
+
+}

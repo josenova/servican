@@ -92,7 +92,8 @@ body {
   border-bottom: 1px solid rgba(255,255,255,0.2);
   overflow:hidden;
   max-width:none !important;
-
+position:relative;
+height:70px;
 }
 
 
@@ -103,9 +104,9 @@ body {
       width: 32px;
     height: 36px;
     float: left;
-    left: 21px;
-    top: 1px;
-    position: relative;
+        left: 21px;
+    top: 3px;
+    position: absolute;
 }
 
 #logo.colour {
@@ -115,8 +116,8 @@ background-image: url(asset-path('logo.png')) !important;
 
 #logo_text {
   position: absolute;
-  top: 38px;
-  left: 120px;
+   top: 12px;
+    left: 50px;
   font-size: 22px;
   font-family:$primary-font;
 }

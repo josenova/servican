@@ -231,7 +231,7 @@
   background-color: #2c3e50;
   background-image: url(asset-path('paper_plane.png'));
   background-repeat: no-repeat;
-    background-position: top right 60px;
+    background-position: top right;
   background-size: 27%;
   padding:3.4% 5.5%;
 }
@@ -287,6 +287,11 @@ font-weight: bold;
   transition: all 0.15s linear;
 }
 
+.map {
+    display: inline-block;
+    overflow: hidden;
+    float: left;
+}
 
 .map .box {
   position: absolute;
@@ -297,6 +302,7 @@ font-weight: bold;
   left: 20px;
   box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
   padding: 15px 15px 15px 40px;
+  height:111px;
 }
 
 #arroyohondo .box {

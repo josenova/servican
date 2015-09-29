@@ -10,18 +10,18 @@
 
 	#description {
 		
-	font-size: 20px !important;
+	font-size: 19px !important;
 	}
 
 	#catalog h6 {
-		line-height: 55px;
+		    padding-top: 15px !important;
 	}
 
 	#catalog p {
 		display: none;
 	}
 
-	#locations .map a {
+	#locations .map a, #locations .map a img {
 		width: 900px;
 	}
 
@@ -54,7 +54,7 @@
 		width:100%;
 	}
 
-	#locations .map a {
+	#locations .map a, #locations .map a img{
 		width: 767px;
 	}
 

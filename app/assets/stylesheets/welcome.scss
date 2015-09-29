@@ -262,12 +262,12 @@ font-weight: bold;
 
 
 #naco a {
-  background-image: url(asset-path('naco.png'));
+ //background-image: url(asset-path('naco.png'));
 }
 
 
 #arroyohondo a {
-  background-image: url(asset-path('arroyo_hondo.png'));
+  //background-image: url(asset-path('arroyo_hondo.png'));
 }
 
 
@@ -275,9 +275,12 @@ font-weight: bold;
   float: left;
   height: 600px;
   width: 1139px;
-  background-size: cover;
   display: block;
-  background-position: center;
+}
+
+#locations .map a img {
+  height: 600px;
+    width: 1139px;
 }
 
 

@@ -338,7 +338,7 @@ display:none;
 
 .box .address, .box .phone {
   font-family: $secondary-font;
-  color: #666;
+  color: #555;
   font-size: 12px;
   font-weight: 300;
   padding-top: 6px;
@@ -380,7 +380,7 @@ display:none;
 
 #navigation input.radio:empty ~ label {
   position: relative;
-  color: #444;
+  color: #333;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

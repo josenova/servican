@@ -22,7 +22,7 @@
 	}
 
 	#locations .map a, #locations .map a img {
-		width: 900px;
+		width: 900px !important;
 	}
 
 	.thumbnail {
@@ -34,8 +34,8 @@
 
 @media screen and (max-width: 768px) {
 
-#locations .map a, #locations .map a img{
-		width: 768px;
+#locations .map a, #locations .map a img {
+		width: 768px !important;
 	}
 }
 

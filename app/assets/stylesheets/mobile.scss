@@ -14,7 +14,7 @@
 	}
 
 	#catalog h6 {
-		    padding-top: 15px !important;
+		    padding-top: 13px !important;
 	}
 
 	#catalog p {
@@ -25,10 +25,21 @@
 		width: 900px;
 	}
 
+	.thumbnail {
+		width:52px !important;
+		height:52px !important;
+	}
+
 }
 
+@media screen and (max-width: 768px) {
 
-@media screen and (max-width: 767px) {
+#locations .map a, #locations .map a img{
+		width: 768px;
+	}
+}
+
+@media screen and (max-width: 750px) {
 
 	#header {
 		    background: #fff !important;
@@ -54,8 +65,6 @@
 		width:100%;
 	}
 
-	#locations .map a, #locations .map a img{
-		width: 767px;
-	}
+	
 
 }

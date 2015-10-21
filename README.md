@@ -2,7 +2,7 @@
 
 Work in progress.
 
-As of now Servican is a static website. 
+As of now Servican is a static website. [www.servican.com.do](http://www.servican.com.do)
 
 Currently on the process of: 
 

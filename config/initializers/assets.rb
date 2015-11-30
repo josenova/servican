@@ -9,3 +9,10 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
+
+# Add the fonts and videos path
+Rails.application.config.assets.paths << "#{Rails.root}/app/assets/fonts"
+Rails.application.config.assets.paths << "#{Rails.root}/app/assets/videos"
+
+# Precompile additional assets
+Rails.application.config.assets.precompile += %w( .svg .eot .woff .ttf *.js *.css )

@@ -1,6 +1,134 @@
 @import 'variables';
 
 
+#video_container {
+  overflow:hidden;
+  position: fixed;
+    z-index:-2;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+
+#video_overlap {
+   background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+  position: fixed;
+  width: 100%;
+  display: block;
+  height: 800px;
+}
+
+.left {
+  float:left;
+  width:50%;
+  padding-right:3.44%;
+}
+
+.right {
+  float:right;
+  width:50%;
+  padding-left:3.44%;
+}
+
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  }
+
+.panel {
+  max-width:1139px;
+  position: relative;
+  overflow:hidden;
+  margin:0 auto;
+  padding:5.5%;
+}
+
+/*************************************** HEADER **************************************/
+
+#header {
+  padding: 28px 5.5% 0;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 10;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+#header .wrapper {
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  overflow:hidden;
+  max-width:none !important;
+position:relative;
+height:70px;
+}
+
+
+#logo {
+  background-image: url(asset-path('logo_white.png'));
+  background-size:contain;
+  background-repeat:no-repeat;
+      width: 32px;
+    height: 36px;
+    float: left;
+        left: 21px;
+    top: 3px;
+    position: absolute;
+}
+
+#logo.colour {
+
+background-image: url(asset-path('logo.png')) !important;
+}
+
+#logo_text {
+  position: absolute;
+  top: 12px;
+  left: 50px;
+  font-size: 22px;
+  font-family:$primary-font;
+  color:#fff;
+}
+
+
+.solid {
+  background: #fff;
+  /*border-bottom:1px solid rgba(0, 0, 0, 0.05);*/
+}
+
+.solid #logo_text {
+  color:#333;
+}
+
+.solid .wrapper {
+  border-bottom:0 !important;
+}
+
+/***************************************** MAIN MENU ****************************************/
+
+
+#main_menu {
+  float:right;
+  width:600px;
+}
+
+#main_menu li {
+  display: inline-block;
+  padding: 2.12% 4.5%;
+  float:left;
+}
+
+#main_menu li a {
+  text-transform:uppercase;
+  letter-spacing: 0.2em;
+  font-size:0.8em;
+  color:#fff;
+}
+
+.solid #main_menu li a {
+  color:#444;
+}
 
 #slogan {
   padding: 15.9% 5.2% 0;
@@ -11,6 +139,7 @@
   font-size: 60px;
   font-weight: normal;
   position: fixed;
+  color:#fff;
 }
 #slogan #emergency {
   position: absolute;
@@ -20,6 +149,7 @@
   padding: 0;
   background: #3498DB;
   font-family: $secondary-font;
+  color:#fff;
 }
 
 #slogan #cross {
@@ -241,6 +371,7 @@
   
   font-size:19px;
   font-family: $primary-font;
+  color:#fff;
   }
   
 #contact p a {
@@ -397,4 +528,81 @@ display:none;
   padding: 2.12%;
   font-family: $secondary-font;
   font-size: 12px;
+  color:#fff;
+}
+
+
+
+/***************************************** MOBILE ****************************************/
+
+
+@media screen and (max-width: 1098px) {
+
+  #main_menu {
+   display:none;  
+  }
+}
+
+
+@media screen and (max-width: 900px) {
+
+  #description {
+    
+  font-size: 19px !important;
+  }
+
+  #catalog h6 {
+        padding-top: 13px !important;
+  }
+
+  #catalog p {
+    display: none;
+  }
+
+  #locations .map a, #locations .map a img {
+    width: 900px !important;
+  }
+
+  .thumbnail {
+    width:52px !important;
+    height:52px !important;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+#locations .map a, #locations .map a img {
+    width: 768px !important;
+  }
+}
+
+@media screen and (max-width: 750px) {
+
+  #header {
+        background: #fff !important;
+  }
+
+  #logo {
+        background-image: url(asset-path('logo.png')) !important;
+  }
+
+  #logo_text {
+    color: #333 !important;
+  }
+
+  #about_us, #description, #catalog, #customers, #contact, #video_container, #locations, #video_overlap, #slogan h2  {
+    display:none;
+  }
+
+  body {
+    background-color:#fff !important;
+  }
+
+  #slogan #emergency {
+    width:100%;
+  }
+
+  
+
 }

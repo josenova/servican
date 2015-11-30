@@ -1,0 +1,9 @@
+%p You have #{@clients.count} clients.
+%br
+  
+%table{:cellpading => '0', :cellspacing => 0}
+  %tr
+    %th Nombre
+  - @clients.order("created_at asc").each do |c|
+    %tr{:class => cycle('odd', 'even')}
+      %td= c.name

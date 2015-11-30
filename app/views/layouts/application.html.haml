@@ -1,7 +1,7 @@
 %html
   %head
     %title Servican Pet Center
-    = stylesheet_link_tag    'application', media: 'all'
+    = stylesheet_link_tag    'application', params[:controller], media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
     = metamagic 
@@ -15,7 +15,7 @@
 
   %body
     #all
-      #main
-        = render "layouts/videobg"
-        = render "layouts/header"
+      #main{:class => "#{params[:controller]}"}
+        = render "layouts/videobg" if controller_name == 'welcome'
+        = render "layouts/header" if controller_name == 'welcome'
         = yield

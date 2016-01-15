@@ -75,9 +75,9 @@ $(document).ready(function(){
 
 
 	function divResize() {
-	  $('#video_container video').css({'height': window.innerHeight/*, 'width': window.innerWidth*/});
-    $('#slogan').css('height', window.innerWidth/1.825);
-    $('#slogan h2').css('font-size', window.innerWidth/21 + 'px');
+	  //$('#video_container video').css({'height': window.innerHeight/*, 'width': window.innerWidth*/});
+    $('#slogan').css('height', window.innerHeight);
+    $('#slogan h2').css('font-size', window.innerWidth/20 + 'px');
 	}
 	
 	$(window).bind('resize', function () { 

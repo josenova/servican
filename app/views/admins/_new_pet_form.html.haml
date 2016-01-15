@@ -1,0 +1,17 @@
+.close x
+= form_tag('/patients', remote: true, id: 'new_pet') do
+  %h5 Nueva Mascota
+  = hidden_field_tag :client_id, ''
+  = field_set_tag do
+    = label_tag :name, "Nombre"
+    = text_field_tag :name, ''
+  = field_set_tag do
+    = label_tag :breed_id, "Raza"
+    = select_tag :breed_id, options_from_collection_for_select(Breed.all, :id, :name)
+  = field_set_tag do
+    = label_tag :gender, "Sexo"
+    = radio_button_tag :gender, true, checked: true 
+    = label_tag :true, "Macho", :value => true
+    = radio_button_tag :gender, false
+    = label_tag :false, "Hembra", :value => false
+  = submit_tag "Crear"

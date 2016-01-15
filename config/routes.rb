@@ -2,9 +2,12 @@ Rails.application.routes.draw do
   devise_for :admins, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
   resources 'clients',  only: [:new, :create, :edit, :show, :index], :defaults => { :format => :json }
+  resources 'patients',  only: [:new, :create, :edit, :show, :index], :defaults => { :format => :json }
+  resources 'appointments',  only: [:new, :create, :edit, :show, :index, :destroy], :defaults => { :format => :json }
   get 'welcome/index'
 
-  get "dashboard" => 'admins#dashboard'
+  get "dashboard/clients" => 'admins#clients', as: 'admin_clients'
+  get "dashboard/appointments" => 'admins#appointments', as: 'admin_appointments'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

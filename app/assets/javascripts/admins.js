@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 /******************************************** DASHBOARD ****************************************/
 
-// Search for clients
+// SEARCH CLIENTS
 
 $("#search").keyup(function(e) {
 
@@ -12,7 +12,7 @@ $("#search").keyup(function(e) {
 
   $.getJSON("/clients?name=" + q, function(data) {
 
-    $("#counter").html(data.length.toString() + " resultados.");
+    $("#first .counter").html(data.length.toString() + " resultados.");
     $("#client_list").empty();
 
     for (var i = 0; i < data.length; i++) { 
@@ -24,21 +24,31 @@ $("#search").keyup(function(e) {
 });
 
 
-// Load single client
+
+// show client
 
 $('#client_list').delegate('a', 'click', function() {
-
   var id = $(this).attr('id');
+  showPatients(id);
+  $('#new_pet #client_id').attr("value", id);
+});
+
+
+// get patients
+function showPatients(id) {
 
   $.getJSON("/clients/" + id, function(data) {
-      console.log(data);
+      console.log('showpatients')
       $('.column#second').show();
-      $('#details h5').html(data.name);
-      $('#details .email').html(data.email);
-      $('#details .phone').html(data.phone).text(phone_mask(data.phone));
-      $('#details .cellphone').html(data.cellphone).text(phone_mask(data.cellphone));
+      $('.column#third').hide();
+
+      $('#profile h5').html(data.name);
+      $('#profile .email').html(data.email);
+      $('#profile .phone').html(data.phone).text(phone_mask(data.phone));
+      $('#profile .cellphone').html(data.cellphone).text(phone_mask(data.cellphone));
 
       $("#pets").empty();
+      $("#second .counter").html(data.patients.length + " pacientes.");
 
       if (data.patients.length > 0) {        
 
@@ -51,8 +61,131 @@ $('#client_list').delegate('a', 'click', function() {
       }
 
   });
+
+}
+
+// delete patient
+
+$('#pet_profile').delegate('.delete', 'click', function() {
+  var id = $(this).attr('id');
+
+  $(this).parent().remove();
+
+  $.ajax({
+    url: '/appointments/' + id,
+    type: 'DELETE'
+  });
+
 });
 
+
+// create patient form callback
+
+$('#new_pet').on('ajax:success',function(e, data, status, xhr){
+    
+    var id = $(this).children('#client_id').attr('value');
+
+    $(this).parent().hide();
+    showPatients(id);
+    
+  }).on('ajax:error',function(e, xhr, status, error){
+      // error
+});
+
+
+
+
+
+
+// APPOINTMENTS
+
+// show patient
+
+$('#pets').delegate('a', 'click', function() {
+  var id = $(this).attr('id');
+  showAppointments(id);
+  $('#new_appointment #patient_id').attr("value", id);
+  $('#pet_profile').attr("value", id);
+});
+
+
+// get appointments
+function showAppointments(id) {
+
+  $.getJSON("/patients/" + id, function(data) {
+
+      $('.column#third').show();
+
+      $('#pet_profile h5').html(data.name);
+
+      $("#appointments").empty();
+      $("#third .counter").html(data.appointments.length + " citas.");
+
+      if (data.appointments.length > 0) {        
+
+        for (var i = 0; i < data.appointments.length; i++) { 
+          $('#appointments').append('<li><span class="date">' + data.appointments[i].date + '</span><span class="reason"> ' + data.appointments[i].reason + '</span><a class="delete" id="'+ data.appointments[i].id +'">x</a></li>');
+        }
+        
+      } else {
+        $('#appointments').html('Sin citas.');
+      }
+
+  });
+
+}
+
+// delete appointment
+
+$('#appointments').delegate('a', 'click', function() {
+  var id = $(this).attr('id');
+
+  $(this).parent().remove();
+
+  $.ajax({
+    url: '/appointments/' + id,
+    type: 'DELETE'
+  });
+
+});
+
+
+// Create client form callback
+
+$('#new_appointment').on('ajax:success',function(e, data, status, xhr){
+    
+    var id = $(this).children('#patient_id').attr('value');
+
+    $(this).parent().hide();
+    showAppointments(id);
+    
+  }).on('ajax:error',function(e, xhr, status, error){
+      // error
+});
+
+
+
+
+// FORMS
+
+// Show Forms
+$('.add').click(function() {
+  $(this).parent().parent().children('.dark').show();
+});
+
+// Close Forms
+$('.close').click(function() {
+  $(this).parent().hide();
+});
+
+
+
+
+
+
+
+
+//HELPERS
 
 // Mask phone numbers
 function phone_mask(number) {
@@ -60,6 +193,14 @@ function phone_mask(number) {
   return number;
 }
 
+// Gender to string
+function gender_mask(foo) {
+  if (foo) {
+    return "- Macho";
+  } else {
+    return '- Hembra';
+  }
+}
 /******************************************** END DOC READY *****************************************/  
    
 
@@ -74,7 +215,7 @@ function phone_mask(number) {
 
 
 
-/****************************************** RESIZE FUNCTION *******************************************/
+
 
        
 

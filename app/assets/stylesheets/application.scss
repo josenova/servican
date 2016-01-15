@@ -35,7 +35,7 @@ body {
   font-family: $primary-font;
   color: #333;
   overflow-x:hidden;
-  background: #f0f0f0;
+  background: #E9EAED;
 }
 
 .anchor {
@@ -69,6 +69,29 @@ p {
   font-weight:300;
 }
 
+table {
+  width:100%;
+}
+
+th {
+    font-size: 13px;
+    text-align: left;
+    padding-bottom: 10px;
+    font-family: $secondary-font;
+    font-weight: 500;
+}
+
+td {
+  font-size:12px;
+  padding: 2px 6px;
+  font-family: $secondary-font;
+  font-weight:300;
+}
+
+tr.odd {
+  background: #f6f6f6;
+}
+
 h3::after {
   content:'';
   display:block;
@@ -77,4 +100,25 @@ h3::after {
   background-color:$orange;
   position: relative;
   margin: 18px 0;
+}
+
+/* Admin Log in */
+
+#new_admin {
+  margin:0 auto;
+  width: 200px;
+  
+}
+
+#new_admin input {
+  border:1px solid rgba(0,0,0,0.4);
+  padding:3px 5px;
+      width: 100%;
+    margin-bottom: 15px;
+}
+
+h2.login {
+  font-family:$primary-font;
+  margin: 100px auto 20px;
+  width:200px;
 }

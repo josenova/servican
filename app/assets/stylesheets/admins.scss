@@ -6,7 +6,7 @@
 
 #dashboard {
 	
-	margin-left:14.59%;
+	margin-left:186px;
 	padding:1.3%;
 	overflow: hidden;
 	font-family: $secondary-font;
@@ -21,10 +21,38 @@
 	
 	background:$dark-blue;
     height: 100%;
-    width: 14.59%;
+    width: 186px;
     position: fixed;
     top: 0;
     left: 0;
+    padding-top:48px;
+}
+
+#logo {
+  background-image: url(asset-path('logo_white.png'));
+  background-size:contain;
+  background-repeat:no-repeat;
+      width: 22px;
+    height: 27px;
+    float: left;
+        left: 13px;
+    top: 10px;
+    position: absolute;
+}
+
+
+#logo_text {
+  font-family:$primary-font;
+  color:#fff;
+  position: absolute;
+    top: 19px;
+    left: 32px;
+    font-size: 14px;
+
+}
+
+#sidemenu {
+	border-top:1px solid rgba(255, 255, 255, 0.3);
 }
 
 #sidemenu li {
@@ -36,11 +64,17 @@
 #sidemenu li a {
 	color: #fff;
 	font-family: $secondary-font;
-	padding:7px;
+	padding:7px 7px 7px 13px;
 	border-bottom:1px solid rgba(2555,255,255,0.3);
 	display:block;
-	font-size:14px;
+	font-size:13px;
+	font-weight:500;
 }
+
+.current a {
+    border-left: 2px solid yellow;
+}
+
 
 
 /******************************************* MAIN *************************************/
@@ -53,11 +87,84 @@
 .panel {
 	background: #fff;
     border-radius: 2px;
-    border: 1px solid #e5e5e5;
+    border: 1px solid rgba(0,0,0,0.12);
     padding: 3.44%;
     overflow:hidden;
     width:100%;
     margin-bottom:1.3%;
+    position:relative;
+}
+
+
+.dark {
+
+	background-color:#444 !important;
+	display:none;
+	
+	h5 {
+		color:#fff;
+		text-shadow: 0 0 1px #333;
+	}
+
+	fieldset {
+		margin-bottom:1.3%;
+		overflow: hidden;
+	}
+
+	label {
+		color: #f0f0f0;
+	    width: 20%;
+	    display: inline-block;
+	    font-size: 13px;
+	}
+
+	input {
+	    height: 20px;
+	    line-height: 20px;
+	    padding: 0 5px;
+	    background-color: #222;
+	    border: 1px solid #000;
+	    color: #f0f0f0;
+	    width: 78%;
+	    display: inline-block;
+	}
+
+	input[type="radio"] {
+		width: 4%;
+    	height: 19px;
+	}
+
+	input[type="submit"] {
+		width: 30%;
+	    background-color: $orange;
+	    border: 1px solid rgba(0,0,0,0.2);
+	    text-transform: uppercase;
+	    font-size: 9px;
+	    height: 20px;
+	    line-height: 20px;
+	    margin-top: 6px;
+	    cursor: pointer;
+	}
+
+	.close {
+		position: absolute;
+	    top: 10px;
+	    right: 10px;
+	    color: #fff;
+	    font-size: 11px;
+	    background-color: rgba(0,0,0,0.1);
+	    text-align: center;
+	    width: 18px;
+	    height: 18px;
+	    line-height: 18px;
+	    display:none;
+	    cursor:pointer;
+	}
+
+}
+
+.dark:hover .close {
+    display:block;
 }
 
 .column#first {
@@ -78,6 +185,56 @@
 	display:none;
 }
 
+.counter {
+	font-style:italic;
+	font-size:14px;
+	color:#555;
+	display:block;
+	width: 100%;
+	margin-bottom: 4px;
+	
+}
+
+.add {
+		position: absolute;
+	    top: 10px;
+	    right: 10px;
+	    width: 18px;
+	    height: 18px;
+	    background-color: green;
+	    display: block;
+	    text-align: center;
+	    line-height: 18px;
+	    color: #fff;
+	    font-weight: bold;
+	    border-radius: 2px;
+	    font-size: 14px;
+	    cursor:pointer;
+	    visibility:hidden;
+}
+
+.panel:hover .add {
+	visibility:visible;
+}
+
+.delete {
+	    display: block;
+    width: 18px;
+    height: 18px;
+    background-color: darkred;
+    border-radius: 2px;
+    position: absolute;
+    right: 0px;
+    top: 1px;
+    line-height: 16px;
+    font-size:11px;
+    color: #fff;
+    text-align:center;
+    visibility:hidden;
+    cursor:pointer;
+    font-weight:bold;
+}
+
 /**************************************** SEARCH **********************************/
 
 #search {
@@ -88,15 +245,6 @@
     color:#555;
     width:100%;
     font-size: 14px;
-}
-
-#counter {
-	font-style:italic;
-	font-size:14px;
-	color:#555;
-	display:block;
-	width: 100%;
-	
 }
 
 
@@ -117,16 +265,27 @@
 }
 
 
-/**************************************** DETAILS **********************************/
+/**************************************** PROFILE **********************************/
 
-#details div {
-	padding-bottom: 2.12%;
+#profile {
+	
+	 div {
+		padding-bottom: 2.12%;
+	}
 }
+
+
+
 
 /**************************************** PETS **********************************/
 
+#pets {
+	margin-top:6px;
+}
+
 #pets li a {
 	width:100%;
+	padding: 1.3% 0;
 
 	span {
 		float:right;
@@ -135,8 +294,89 @@
 
 }
 
+#pets li a:hover {
+	text-decoration:underline;
+	cursor:hover;
+}
+
+
+/**************************************** PET PROFILE **********************************/
+
+#pet_profile { 
+
+overflow:hidden;
+
+	.breed { 
+		padding-bottom:2.12%;
+	}
+	.gender {
+
+	}
+
+	h5 {
+
+	}
+
+	.edit {
+		background-color: orange;
+	    display: block;
+	    width: 18px;
+	    height: 18px;
+	    border-radius: 2px;
+	    visibility: hidden;
+	    position:absolute;
+	    right:10px;
+	    top:10px;
+		
+	}
+
+}
+
+#pet_profile:hover .edit {
+	visibility:visible;
+}
+
+
+/******************************************* APPOINTMENTS **********************************/
+
+#appointments {
+	margin-top:6px;
+}
+
+#appointments li {
+	
+	position:relative;
+	    padding: 1.3% 0;
+	
+	.date {
+		border-radius: 2px;
+	    background-color: #eee;
+	    color: #666;
+	    padding: 2px 5px;
+		font-size: 12px;
+		margin-right: 5px;
+		width: 80px;
+	    display: inline-block;
+	    text-align: center;
+	}
+
+	.reason {
+		
+	}
+}
+
+
+#appointments li:hover .delete {
+    visibility:visible;
+}
+
+
+
+
 
 /**************************************** TYPE **********************************/
+
+
 
 h5 {
     font-size: 15px;

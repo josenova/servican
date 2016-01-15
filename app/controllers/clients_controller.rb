@@ -3,7 +3,7 @@ class ClientsController < ApplicationController
 # This whole controller works as an internal API for json only requests to the action routes.
 
 before_action :authenticate_admin!
-before_action :set_example, only: [:show, :edit, :update, :destroy]
+before_action :set_client, only: [:show, :edit, :update, :destroy]
 
 	# Index search query results
 	def index
@@ -52,7 +52,7 @@ before_action :set_example, only: [:show, :edit, :update, :destroy]
   private
 
     # Use callbacks to share common setup or constraints between actions.
-	def set_example
+	def set_client
 	  @client = Client.find(params[:id])
 	end
 

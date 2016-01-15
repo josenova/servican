@@ -1,7 +1,10 @@
 
 #sidebar
+  #logo
+  #logo_text Servican Pet Center
+
   %ul#sidemenu
     %li
-      = link_to 'Clientes', '#', id: 'clients'
+      = nav_link 'Clientes', admin_clients_path, 'client' 
     %li 
-      = link_to 'Citas', '#', id: 'appointments'
+      = nav_link 'Citas', admin_appointments_path, 'appointment' 

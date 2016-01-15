@@ -16,7 +16,7 @@ class PatientsController < ApplicationController
 		@patient = Patient.new(patient_params)
 		respond_to do |format|
 			if @patient.save
-				format.json { render :show, status: :created, location: @patient }
+				format.json { render :json => { status: :ok, :message => "Success!"}, status: :created }
 			else
 			format.json { render json: @patient.errors, status: :unprocessable_entity }
 			logger.warn "Patient could not be created: #{@patient.attributes.inspect}, is valid?: #{@patient.valid?}"
@@ -26,7 +26,10 @@ class PatientsController < ApplicationController
 
 
 	def show
-		render json: @patient
+		render json: @patient.to_json( :include => { 
+			:breed => { :only => :name }, 
+			:appointments => {} 
+			} )
 	end
 
 	def update
@@ -42,7 +45,7 @@ class PatientsController < ApplicationController
 
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def patient_params
-	params.require(:patient).permit(:name, :gender)
+	params.permit(:name, :gender, :breed_id, :client_id)
 	end
 
 

@@ -3,8 +3,11 @@ class AdminsController < ApplicationController
 before_action :authenticate_admin!
 
 
-	def dashboard
+	def clients
+	end
 
+	def appointments
+		@appointments = Appointment.all
 	end
 
 

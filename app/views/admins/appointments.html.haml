@@ -1,0 +1,20 @@
+#dashboard
+
+  = render "sidebar"
+
+  .panel{:style => "padding:1.3%"}
+    %h5{:style => "margin-bottom:1.3%"} Citas Futuras
+    %table{:cellpading => '0', :cellspacing => '0'}
+      %tr
+        %th Fecha
+        %th Mascota
+        %th Motivo
+        %th Cliente
+      - unless @appointments.empty? 
+        - @appointments.order("date asc").each do |a|
+          %tr{:class => cycle('odd', 'even')}
+            %td= a.date
+            %td= a.patient.name
+            %td= a.reason
+            %td= a.patient.client.name
+

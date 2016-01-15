@@ -1,0 +1,11 @@
+.close x
+= form_tag('/appointments', remote: true, id: 'new_appointment') do
+  %h5 Nueva Cita
+  = hidden_field_tag :patient_id, ''
+  = field_set_tag do
+    = label_tag :date, "Día"
+    = date_field_tag :date
+  = field_set_tag do
+    = label_tag :reason, "Motivo"
+    = text_field_tag :reason, ""
+  = submit_tag "Crear"

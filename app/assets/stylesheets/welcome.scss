@@ -131,7 +131,7 @@ background-image: url(asset-path('logo.png')) !important;
 
 #main_menu li {
   display: inline-block;
-  padding: 2.12% 4.5%;
+  padding: 2.12% 28px;
   float:left;
 }
 
@@ -140,6 +140,13 @@ background-image: url(asset-path('logo.png')) !important;
   letter-spacing: 0.2em;
   font-size:0.8em;
   color:#fff;
+}
+
+#main_menu li .cta {
+      color: lightgreen;
+    border: 1px solid lightgreen;
+    border-radius: 2px;
+    padding: 2px 7px;
 }
 
 .solid #main_menu li a {

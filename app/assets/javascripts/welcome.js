@@ -75,8 +75,9 @@ $(document).ready(function(){
 
 
 	function divResize() {
-	  //$('#video_container video').css({'height': window.innerHeight/*, 'width': window.innerWidth*/});
+	  $('#video_overlap').css({'height': window.innerHeight});
     $('#slogan').css('height', window.innerHeight);
+    $('#slogan').css('padding-top', window.innerHeight/3.5);
     $('#slogan h2').css('font-size', window.innerWidth/20 + 'px');
 	}
 	

@@ -5,7 +5,11 @@ namespace :mail do
 
     @appointments = Appointment.where("appointments.date = ?", Date.today + 3)
     puts @appointments
+    @appointments.each do |a|
+    	AppointmentMailer.reminder_email(a).deliver
+  	end
   	
+
   	end
 
 end

@@ -48,6 +48,22 @@ Rails.application.configure do
   # when problems arise.
   config.log_level = :debug
 
+  config.action_mailer.default_url_options = { host: 'www.servican.com.do'}
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+      :enable_starttls_auto => true,
+      :address => "smtp.gmail.com",
+      :port => 587,
+      :domain => "gmail.com",
+      :authentication => :plain,
+      :user_name => "contacto@servican.com.do",
+      :password => "servican16b",
+      openssl_verify_mode: 'none',
+      tls: false
+  }
+
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 

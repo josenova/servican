@@ -1,9 +1,10 @@
 class AppointmentMailer < ApplicationMailer
 
 	def reminder_email(appointment)
-		@client = appointment.client
+		@appointment = appointment
+		@client = appointment.patient.client
 		@patient = appointment.patient
 
-		mail(to: @client.email, subject: 'Recordatorio de Cita')
+		mail(to: @client.email, subject: ['Cita para ' + @patient.name] )
 	end
 end

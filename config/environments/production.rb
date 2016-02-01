@@ -50,8 +50,6 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'www.servican.com.do'}
 
-  config.action_mailer.delivery_method = :smtp
-
   config.action_mailer.smtp_settings = {
       :enable_starttls_auto => true,
       :address => "smtp.gmail.com",
@@ -59,7 +57,7 @@ Rails.application.configure do
       :domain => "gmail.com",
       :authentication => :plain,
       :user_name => "contacto@servican.com.do",
-      :password => "servican16b",
+      :password => ENV["MAILER_PASSWORD"],
       openssl_verify_mode: 'none',
       tls: false
   }

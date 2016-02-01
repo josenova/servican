@@ -50,7 +50,7 @@ Rails.application.configure do
       :domain => "gmail.com",
       :authentication => :plain,
       :user_name => "contacto@servican.com.do",
-      :password => ENV['MAILER_PASSWORD'],
+      :password => ENV["MAILER_PASSWORD"],
       openssl_verify_mode: 'none',
       tls: false
   }

@@ -1,11 +1,3 @@
 # servican
 
-Work in progress.
-
-As of now Servican is a static website. [www.servican.com.do](http://www.servican.com.do)
-
-Currently on the process of: 
-
-- Uploading the company's client database.
-- Implementing an online appointment reminder service.
-- Provide pet records online.
+[www.servican.com.do](http://www.servican.com.do) is an online platform that handles appointments and email reminders for the veterinary's patients.

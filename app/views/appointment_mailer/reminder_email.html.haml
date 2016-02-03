@@ -1,5 +1,5 @@
-%p #{@client.name},
+%p Hola #{@client.name.split.first},
 
-%p Te queremos recordar que #{@patient.name} tiene cita pautada para el próximo #{@appointment.date} por motivo de <strong>#{@appointment.reason}</strong>.
+%p Te queremos recordar que #{@patient.name} tiene cita pautada para el próximo #{l(@appointment.date, format: :default)} por motivo de <strong>#{@appointment.reason}</strong>.
 
 %p Los esperamos, <br>Servican Pet Center

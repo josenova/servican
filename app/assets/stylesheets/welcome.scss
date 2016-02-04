@@ -194,6 +194,11 @@ background-image: url(asset-path('logo.png')) !important;
   font-size: 13px;
 }
 
+.mobile_info {
+    display:none;
+    margin-top:20px;
+  }
+
 /***************************************** ABOUT US ****************************************/
 
 #about_us {
@@ -613,8 +618,12 @@ display:none;
     color: #333 !important;
   }
 
-  #about_us, #description, #catalog, #customers, #contact, #video_container, #locations, #video_overlap, #slogan h2  {
-    display:none;
+  #about_us, #description, #catalog, #customers, #contact, #video_container, #locations, #video_overlap, #copyright, #slogan h2 {
+    display:none !important;
+  }
+
+  .mobile_info {
+    display:block;
   }
 
   body {
@@ -623,6 +632,8 @@ display:none;
 
   #slogan #emergency {
     width:100%;
+    position:fixed;
+    bottom:0px;
   }
 
   

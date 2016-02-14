@@ -34,6 +34,18 @@ $('#client_list').delegate('a', 'click', function() {
 });
 
 
+// create client form callback
+
+$('#new_client').on('ajax:success',function(e, data, status, xhr){
+
+    $(this).parent().hide();
+    
+  }).on('ajax:error',function(e, xhr, status, error){
+      // error
+});
+
+
+// PATIENTS
 // get patients
 function showPatients(id) {
 
@@ -150,7 +162,7 @@ $('#appointments').delegate('a', 'click', function() {
 });
 
 
-// Create client form callback
+// client form callback
 
 $('#new_appointment').on('ajax:success',function(e, data, status, xhr){
     

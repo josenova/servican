@@ -1,0 +1,17 @@
+.close x
+= form_tag('/clients', remote: true, id: 'new_client') do
+  %h5 Nuevo Cliente
+  = hidden_field_tag :client_id, ''
+  = field_set_tag do
+    = label_tag :name, "Nombre"
+    = text_field_tag :name, ''
+  = field_set_tag do
+    = label_tag :email, "Email"
+    = text_field_tag :email, ''
+  = field_set_tag do
+    = label_tag :phone, "Phone"
+    = text_field_tag :phone, ''
+  = field_set_tag do
+    = label_tag :cellphone, "Cellphone"
+    = text_field_tag :cellphone, ''
+  = submit_tag "Crear"

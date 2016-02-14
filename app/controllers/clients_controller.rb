@@ -14,7 +14,7 @@ before_action :set_client, only: [:show, :edit, :update, :destroy]
 
 
 	def new
-		@client = Client.new
+		#@client = Client.new
 	end
 
 
@@ -22,7 +22,7 @@ before_action :set_client, only: [:show, :edit, :update, :destroy]
 		@client = Client.new(client_params)
 		respond_to do |format|
 			if @client.save
-				format.json { render :show, status: :created, location: @client }
+				format.json { render :json => { status: :ok, :message => "Success!"}, status: :created }
 			else
 			format.json { render json: @client.errors, status: :unprocessable_entity }
 			logger.warn "Client could not be created: #{@client.attributes.inspect}, is valid?: #{@client.valid?}"
@@ -58,7 +58,7 @@ before_action :set_client, only: [:show, :edit, :update, :destroy]
 
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def client_params
-	params.require(:client).permit(:name, :email, :phone, :cellphone)
+	params.permit(:name, :email, :phone, :cellphone)
 	end
 
 

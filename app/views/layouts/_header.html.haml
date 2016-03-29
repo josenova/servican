@@ -1,15 +1,16 @@
 #header
-  .wrapper
-    = link_to root_path(anchor: "main") do 
-      #logo
-      #logo_text Servican Pet Center
+  - unless is_mobile
+    .wrapper
+      = link_to root_path(anchor: "main") do 
+        #logo
+        #logo_text Servican Pet Center
     
-    %ul#main_menu
-      %li 
-        = link_to 'Nosotros', root_path(anchor: "nosotros")
-      %li 
-        = link_to 'Contacto', root_path(anchor: "contacto")
-      %li 
-        = link_to 'Sucursales', root_path(anchor: "sucursales")  
-      %li 
-        = link_to 'Log in', new_admin_session_path, class: 'cta'
+      %ul#main_menu
+        %li 
+          = link_to 'Nosotros', root_path(anchor: "nosotros")
+        %li 
+          = link_to 'Contacto', root_path(anchor: "contacto")
+        %li 
+          = link_to 'Sucursales', root_path(anchor: "sucursales")  
+        %li 
+          = link_to 'Log in', new_admin_session_path, class: 'cta'

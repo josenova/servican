@@ -624,17 +624,35 @@ display:none;
 
   .mobile_info {
     display:block;
+    
+    .mobile_cta {
+      width:100%;
+      margin: 2.12%;
+      padding-left:9%;
+      text-align:center;
+      color:#fff;
+    }
+    
+    .emergency {
+      background:$light-blue;
+      font-size:1.5em;
+    }
+
+    .phone {
+      background:$orange;
+      font-size:1.5em;
+    }
+
+    .address {
+      
+    }
   }
 
   body {
     background-color:#fff !important;
   }
 
-  #slogan #emergency {
-    width:100%;
-    position:fixed;
-    bottom:0px;
-  }
+
 
   
 

@@ -606,6 +606,7 @@ display:none;
 
 @media screen and (max-width: 750px) {
 
+
   #header {
         background: #fff !important;
   }
@@ -635,21 +636,23 @@ display:none;
     
     .emergency {
       background:$light-blue;
-      font-size:1.5em;
+      font-size:1.25em;
     }
 
     .phone {
       background:$orange;
-      font-size:1.5em;
+      font-size:1.25em;
     }
 
-    .address {
-      
+    .opens {
+      color:#333;
     }
   }
 
   body {
     background-color:#fff !important;
+    background-image: url(asset-path('paperbg.png'));
+    
   }
 
 

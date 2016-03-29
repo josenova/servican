@@ -100,8 +100,8 @@
   %div{:style => "overflow:hidden; text-align:center; padding:40px 40px 20px;"} 
     = image_tag('logo_full.png')
   .mobile_info
-    .mobile_cta.phone Teléfono: 809-566-2897
-    .mobile_cta.emergency Emergencias: 809-669-2786
+    %a.mobile_cta.phone{:href => "tel:8095662897"} Teléfono: 809.566.2897
+    %a.mobile_cta.emergency{:href => "tel:8096692786"} Emergencias: 809.669.2786
     .mobile_cta.opens 
       %div Horario
       %div Lunes - Viernes: 9:00 a.m. - 6:00 p.m.

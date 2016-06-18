@@ -272,8 +272,47 @@
 	 div {
 		padding-bottom: 2.12%;
 	}
+
+	.edit {
+		background-color: orange;
+	    display: block;
+	    width: 18px;
+	    height: 18px;
+	    border-radius: 2px;
+	    visibility: hidden;
+	    position:absolute;
+	    right:10px;
+	    top:10px;
+		
+	}
+
+	input {
+		display:block;
+		font-size: 13px;
+		margin-bottom:5px;
+		border: 1px solid #dbdbdb;
+        padding: 2px 6px;
+            float: left;
+    	width: 65%;
+    	margin-right: 15%;
+	}
+
+	label {
+	    float: left;
+	    width: 20%;
+	    font-size: 13px;
+	    line-height: 22px;
+	}
+
+	.send {
+		display:none;
+	}
+
 }
 
+#profile:hover .edit {
+	visibility:visible;
+}
 
 
 
@@ -317,24 +356,9 @@ overflow:hidden;
 
 	}
 
-	.edit {
-		background-color: orange;
-	    display: block;
-	    width: 18px;
-	    height: 18px;
-	    border-radius: 2px;
-	    visibility: hidden;
-	    position:absolute;
-	    right:10px;
-	    top:10px;
-		
-	}
 
 }
 
-#pet_profile:hover .edit {
-	visibility:visible;
-}
 
 
 /******************************************* APPOINTMENTS **********************************/

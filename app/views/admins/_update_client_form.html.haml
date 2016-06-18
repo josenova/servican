@@ -1,0 +1,8 @@
+= form_tag('/clients/', method: :put, remote: true, id: 'update_client') do
+  %label Email:
+  = email_field_tag :email, '', :class => "email", disabled: true
+  %label Tel:
+  = text_field_tag :phone, '', :class => "phone", disabled: true
+  %label Cel:
+  = text_field_tag :cellphone, '', :class => "cellphone", disabled: true
+  = submit_tag 'Guardar', :class => "send"

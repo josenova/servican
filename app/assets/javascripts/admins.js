@@ -31,6 +31,7 @@ $('#client_list').delegate('a', 'click', function() {
   var id = $(this).attr('id');
   showPatients(id);
   $('#new_pet #client_id').attr("value", id);
+  $('#profile form').attr("action", "/clients/" + id);
 });
 
 
@@ -45,19 +46,35 @@ $('#new_client').on('ajax:success',function(e, data, status, xhr){
 });
 
 
+// update client form callback
+
+$('#update_client').on('ajax:success',function(e, data, status, xhr){
+
+    $(this).find('.send').hide();
+    $('.edit').show();
+    $(this).find('input').attr('disabled', 'disabled');
+
+  }).on('ajax:error',function(e, xhr, status, error){
+      // error
+});
+
+
+
+
+
 // PATIENTS
 // get patients
 function showPatients(id) {
 
   $.getJSON("/clients/" + id, function(data) {
-      console.log('showpatients')
+
       $('.column#second').show();
       $('.column#third').hide();
 
       $('#profile h5').html(data.name);
-      $('#profile .email').html(data.email);
-      $('#profile .phone').html(data.phone).text(phone_mask(data.phone));
-      $('#profile .cellphone').html(data.cellphone).text(phone_mask(data.cellphone));
+      $('#profile .email').val(data.email);
+      $('#profile .phone').val(phone_mask(data.phone));
+      $('#profile .cellphone').val(phone_mask(data.cellphone));
 
       $("#pets").empty();
       $("#second .counter").html(data.patients.length + " pacientes.");
@@ -189,6 +206,16 @@ $('.add').click(function() {
 $('.close').click(function() {
   $(this).parent().hide();
 });
+
+$('.edit').click(function() {
+  $(this).parent().find('input').each(function(){
+    $(this).removeAttr('disabled');
+  });
+  $(this).hide();
+  $(this).parent().find('.send').show();
+});
+
+
 
 
 

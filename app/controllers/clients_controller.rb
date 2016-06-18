@@ -3,7 +3,7 @@ class ClientsController < ApplicationController
 # This whole controller works as an internal API for json only requests to the action routes.
 
 before_action :authenticate_admin!
-before_action :set_client, only: [:show, :edit, :update, :destroy]
+before_action :set_client, only: [:show, :update, :destroy]
 
 	# Index search query results
 	def index
@@ -40,10 +40,10 @@ before_action :set_client, only: [:show, :edit, :update, :destroy]
 
 	def update
 	    respond_to do |format|
-	      if @example.update(example_params)
-	        format.json { render :show, status: :ok, location: @example }
+	      if @client.update(client_params)
+	        format.json { render :json => { status: :ok, :message => "Success" } }
 	      else
-	        format.json { render json: @example.errors, status: :unprocessable_entity }
+	        format.json {  }
 	      end
 	    end
     end

@@ -24,13 +24,11 @@
       #profile
         %h5
         .edit
-        .email 
-        .phone
-        .cellphone
+        = render "admins/update_client_form"
     
     .panel.dark
       = render "admins/new_pet_form"
-    
+
 
     .panel
       .counter
@@ -45,7 +43,6 @@
         %h5
         .breed
         .gender
-        .edit 
 
     .panel.dark
       = render "admins/new_appointment_form"

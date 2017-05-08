@@ -1,5 +1,5 @@
 # servican
 
-[servican.com.do](http://www.servican.com.do) is an online platform that handles appointments and email reminders for the veterinary's patients.
+[servican.com.do](http://www.servican.com.do) is a Ruby on Rails 4 online platform that handles appointments and email reminders for the veterinary's patients.
 
-Mobile version currently on the works.
+

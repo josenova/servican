@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -31,11 +30,10 @@ ActiveRecord::Schema.define(version: 20160108231100) do
     t.datetime "locked_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
+    t.index ["unlock_token"], name: "index_admins_on_unlock_token", unique: true, using: :btree
   end
-
-  add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
-  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
-  add_index "admins", ["unlock_token"], name: "index_admins_on_unlock_token", unique: true, using: :btree
 
   create_table "appointments", force: :cascade do |t|
     t.date     "date"
@@ -43,18 +41,16 @@ ActiveRecord::Schema.define(version: 20160108231100) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "reason"
+    t.index ["patient_id"], name: "index_appointments_on_patient_id", using: :btree
   end
-
-  add_index "appointments", ["patient_id"], name: "index_appointments_on_patient_id", using: :btree
 
   create_table "breeds", force: :cascade do |t|
     t.string   "name",       null: false
     t.integer  "species_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["species_id"], name: "index_breeds_on_species_id", using: :btree
   end
-
-  add_index "breeds", ["species_id"], name: "index_breeds_on_species_id", using: :btree
 
   create_table "clients", force: :cascade do |t|
     t.string   "name",       null: false
@@ -73,10 +69,9 @@ ActiveRecord::Schema.define(version: 20160108231100) do
     t.integer  "breed_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["breed_id"], name: "index_patients_on_breed_id", using: :btree
+    t.index ["client_id"], name: "index_patients_on_client_id", using: :btree
   end
-
-  add_index "patients", ["breed_id"], name: "index_patients_on_breed_id", using: :btree
-  add_index "patients", ["client_id"], name: "index_patients_on_client_id", using: :btree
 
   create_table "species", force: :cascade do |t|
     t.string   "name"
